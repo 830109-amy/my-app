@@ -36,9 +36,6 @@ export default function ModalScreen() {
   const totalProtein = (parseFloat(bProtein) || 0) + (parseFloat(lProtein) || 0) + (parseFloat(dProtein) || 0);
   const totalVeg = (parseFloat(bVeg) || 0) + (parseFloat(lVeg) || 0) + (parseFloat(dVeg) || 0);
 
-  // 目標總和
-  const targetTotal = (parseFloat(tStarch) || 0) + (parseFloat(tProtein) || 0) + (parseFloat(tVeg) || 0);
-
   // 其他表單狀態
   const [water, setWater] = useState('');
   const [evilFood, setEvilFood] = useState<string | null>(null);
@@ -230,7 +227,6 @@ export default function ModalScreen() {
         <View style={styles.section}>
           <View style={styles.labelRow}>
             <Text style={styles.label}>1. 目標攝取設定</Text>
-            <Text style={styles.totalBadge}>目標總和: {targetTotal}</Text>
           </View>
           <View style={styles.inputRow}>
             <View style={styles.inputCol}>
@@ -565,7 +561,6 @@ const styles = StyleSheet.create({
   section: { marginBottom: 25 },
   labelRow: { flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginBottom: 10 },
   label: { fontSize: 16, fontWeight: '700', color: '#333' },
-  totalBadge: { fontSize: 14, fontWeight: '600', color: '#007AFF', backgroundColor: '#E1F0FF', paddingHorizontal: 10, paddingVertical: 4, borderRadius: 12 },
   summaryBox: { flexDirection: 'row', backgroundColor: '#000', borderRadius: 10, paddingVertical: 10, paddingHorizontal: 15, marginBottom: 10, justifyContent: 'space-around', width: '95%', alignSelf: 'center' },
   summaryItem: { alignItems: 'center' },
   summaryLabel: { color: '#AAA', fontSize: 11, marginBottom: 2 },
